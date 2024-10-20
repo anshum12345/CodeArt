@@ -24,7 +24,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          GetTouch
+          GetInTouch
         </a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
