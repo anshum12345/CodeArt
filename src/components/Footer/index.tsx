@@ -20,7 +20,7 @@ export default function Footer() {
       </div> */}
       <div className="footer-section">
         <a
-          href="https://github.com/anshum12345"
+          href="https://anshumdwivedi.vercel.app/"
           target="_blank"
           rel="noreferrer"
         >
