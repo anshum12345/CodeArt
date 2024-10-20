@@ -24,7 +24,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Submit an issue
+         GetTouch
         </a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
