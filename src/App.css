@@ -5,4 +5,24 @@
   margin-bottom: 150px;
   margin-top: 50px;
   min-height: 58vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+
+/* src/App.css */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
 }

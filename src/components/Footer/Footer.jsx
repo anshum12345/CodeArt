@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="footer-section">
         <img
-          src="/android-chrome-192x192.png"
+          src="https://img.freepik.com/free-vector/programming-concept-it-education-student-writing-software-coding-application-java-script-it-project-digital-technology-development-website-interface-vector-illustration_613284-1712.jpg?t=st=1729531035~exp=1729534635~hmac=16df4e806e5e606de8068822b26552ffb128bab032f0f27a10be67c4ded18a8f&w=740"
           alt="App Logo"
           className="logo"
         />
@@ -24,10 +24,10 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          GetInTouch
+          Visitportfolio
         </a>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://img.freepik.com/free-vector/programming-concept-it-education-student-writing-software-coding-application-java-script-it-project-digital-technology-development-website-interface-vector-illustration_613284-1712.jpg?t=st=1729531035~exp=1729534635~hmac=16df4e806e5e606de8068822b26552ffb128bab032f0f27a10be67c4ded18a8f&w=740"
           width="13"
           height="13"
           fill="currentColor"

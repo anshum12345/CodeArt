@@ -1,0 +1,188 @@
+/* src/HomePage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Importing a new font */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Change font family to Roboto */
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0A1828; /* Dark classic blue background color */
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: #BFA181; /* Gold text color */
+    text-align: center;
+    animation: fadeIn 1s ease-in; /* Fade in animation for heading */
+}
+
+.subheading {
+    font-size: 1.5rem;
+    color: #BFA181; /* Gold text color */
+    text-align: center;
+    animation: fadeIn 1.5s ease-in; /* Fade in animation for subheading */
+}
+
+.description {
+    font-size: 1rem;
+    color: #BFA181; /* Gold text color */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 2s ease-in; /* Fade in animation for description */
+}
+
+.animated-button {
+    background-color: #178582; /* Turquoise buttons */
+    color: white; /* White text on buttons */
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 3rem; /* Increased button padding for larger size */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(23, 133, 130, 0.3);
+}
+
+.animated-button:hover {
+    background-color: #146f6c; /* Darker turquoise on hover */
+    transform: translateY(-2px);
+}
+
+.animated-button.clicked:hover {
+    background-color: #146f6c; /* Consistent darker turquoise when clicked */
+}
+
+.animated-button.clicked {
+    animation: button-click 0.3s forwards; /* Click animation */
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; 
+}
+
+.image:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    animation:ease-in-out;
+}
+
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+.whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+.whatsappButton:hover {
+    transform: scale(1.1);
+}
+
+.whatsappLogo {
+    width: 30px;
+    height: 30px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .subheading {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .animated-button {
+        width: 100%;
+    }
+
+    .whatsappButton {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsappLogo {
+        width: 25px;
+        height: 25px;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade {
+    animation: fadeOut 0.3s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s forwards;
+}
+
