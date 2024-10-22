@@ -21,6 +21,12 @@ body {
     color: #BFA181; /* Gold text color */
     text-align: center;
     animation: fadeIn 1s ease-in; /* Fade in animation for heading */
+    transition: transform 0.3s, color 0.3s; /* Transform and color change on hover */
+}
+
+.heading:hover {
+    transform: translateY(-5px);
+    color: #FFD700; /* Lighter gold on hover */
 }
 
 .subheading {
@@ -28,6 +34,11 @@ body {
     color: #BFA181; /* Gold text color */
     text-align: center;
     animation: fadeIn 1.5s ease-in; /* Fade in animation for subheading */
+    transition: transform 0.3s; /* Transform on hover */
+}
+
+.subheading:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 .description {
@@ -36,6 +47,11 @@ body {
     text-align: center;
     margin-bottom: 1.5rem;
     animation: fadeIn 2s ease-in; /* Fade in animation for description */
+    transition: color 0.3s; /* Color change on hover */
+}
+
+.description:hover {
+    color: #FFD700; /* Change text color on hover */
 }
 
 .animated-button {
@@ -52,7 +68,7 @@ body {
 
 .animated-button:hover {
     background-color: #146f6c; /* Darker turquoise on hover */
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Move up on hover */
 }
 
 .animated-button.clicked:hover {
@@ -74,7 +90,7 @@ body {
 
 .image:hover {
     transform: scale(1.05); /* Scale up on hover */
-    animation:ease-in-out;
+    animation: ease-in-out; /* Just ensuring it's smooth */
 }
 
 @keyframes button-click {
@@ -98,12 +114,12 @@ body {
     }
 }
 
-@keyframes rotate {
+@keyframes fadeOut {
     from {
-        transform: rotate(0deg);
+        opacity: 1;
     }
     to {
-        transform: rotate(10deg);
+        opacity: 0;
     }
 }
 
@@ -160,24 +176,8 @@ body {
         height: 25px;
     }
 }
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
+/* Additional fade effects */
 .fade {
     animation: fadeOut 0.3s forwards;
 }
@@ -185,4 +185,3 @@ body {
 .fade-in {
     animation: fadeIn 0.3s forwards;
 }
-

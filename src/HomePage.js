@@ -8,6 +8,9 @@ import Chatbot from './Chatbot';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import './HomePage.css';
 
+// Import the logo image
+import logo from './asset/logo.png';
+
 const HomePage = () => {
     const navigate = useNavigate();
     const [buttonClicked, setButtonClicked] = useState(null);
@@ -48,11 +51,33 @@ const HomePage = () => {
         <Box className="home-container">
             {/* Header Section */}
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem' }}>
-            <IconButton onClick={toggleColorOptions}>
-    <ColorLensIcon sx={{ color: '#4B3D2E' }} /> {/* Navy-beige mix in rgba */}
-</IconButton>
-
-
+                <Box
+                    component="img"
+                    src={logo} // Use the imported logo image
+                    alt="CodeArt Logo"
+                    sx={{
+                        width: { xs: '60px', md: '60px' }, // Reduced responsive size
+                        height: 'auto',
+                        position: 'absolute', // Positioning to shift to the top left corner
+                        left: '1rem',
+                        top: '1rem',
+                    }}
+                />
+                <IconButton
+                    onClick={toggleColorOptions}
+                    size="large"
+                    sx={{
+                        position: 'absolute', // Keep the absolute positioning
+                        right: '1rem', // Right padding
+                        top: '1.2rem', // Top padding
+                        padding: '0.5rem', // Add padding around the button
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Optional: add a background color for better visibility
+                        borderRadius: '50%', // Keep it rounded
+                        boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', // Optional: add shadow
+                    }}
+                >
+                    <ColorLensIcon sx={{ color: '#4B3D2E', fontSize: '4rem' }} />
+                </IconButton>
             </Box>
 
             {/* Color Options */}
@@ -103,15 +128,15 @@ const HomePage = () => {
                         maxWidth: 600,
                     }}
                 >
-                <h1 className="heading" style={{ color: textColor, fontFamily: 'Lobster, cursive', animation: 'fadeIn 1s' }}>
-    Welcome to CodeArt
-</h1>
-<h2 className="subheading" style={{ color: textColor, fontFamily: 'Roboto, sans-serif', animation: 'fadeIn 1.5s' }}>
-    CodeArt is a code editor for the web.
-</h2>
-<p className="description" style={{ color: textColor, fontFamily: 'Roboto, sans-serif', animation: 'fadeIn 2s' }}>
-In CodeArt, you can easily download, compile, and run your code. Our blog offers articles and videos on key data structures and algorithms (DSA) to enhance your learning experience and Upload your problems also.
-</p>
+                    <h1 className="heading" style={{ color: textColor, fontFamily: 'Lobster, cursive', animation: 'fadeIn 1s' }}>
+                        Welcome to CodeArt
+                    </h1>
+                    <h2 className="subheading" style={{ color: textColor, fontFamily: 'Roboto, sans-serif', animation: 'fadeIn 1.5s' }}>
+                        CodeArt is a code editor for the web.
+                    </h2>
+                    <p className="description" style={{ color: textColor, fontFamily: 'Roboto, sans-serif', animation: 'fadeIn 2s' }}>
+                        In CodeArt, you can easily download, compile, and run your code. Our blog offers articles and videos on key data structures and algorithms (DSA) to enhance your learning experience and upload your problems also.
+                    </p>
 
                     <Button
                         className={`animated-button ${buttonClicked === 'app' ? 'clicked' : ''}`}
@@ -130,6 +155,12 @@ In CodeArt, you can easily download, compile, and run your code. Our blog offers
                         onClick={() => handleButtonClick('/compiler', 'compiler')}
                     >
                         Go to Code Compiler
+                    </Button>
+                    <Button
+                        className={`animated-button ${buttonClicked === 'codefile' ? 'clicked' : ''}`}
+                        onClick={() => handleButtonClick('/codefile', 'codefile')}
+                    >
+                        CodeFile
                     </Button>
                 </Box>
 
@@ -155,7 +186,7 @@ In CodeArt, you can easily download, compile, and run your code. Our blog offers
 
             {/* WhatsApp Button */}
             <a
-                href="https://wa.me/918052078680?text=Hi%2C%20Welcome%20to%20CodeArt...this%20is%20the%20message.%20My%20email%20is%20youremail@example.com"
+                href="https://wa.me/918052078680?text=Namaste%2C%20CodeArt...this%20is%20the%20message.%20My%20email%20is%20youremail@example.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={styles.whatsappButton}

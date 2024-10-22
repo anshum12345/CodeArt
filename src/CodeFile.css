@@ -1,0 +1,188 @@
+/* src/CodeFile.css */
+.codefile-container {
+  padding: 2rem;
+  text-align: center;
+  height: 100vh; /* Full height for centering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation for the container */
+}
+
+.codefile-heading {
+  color: #4B3D2E;
+  margin-bottom: 1rem;
+  animation: bounce 0.8s forwards; /* Bounce animation for the heading */
+}
+
+.codefile-description {
+  margin-bottom: 2rem;
+  animation: fadeSlideIn 1s ease-in-out; /* Fade and slide for the description */
+  padding: 1rem; /* Increased padding for the description */
+}
+
+/* Coding Tools Container */
+.coding-tools-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow tools to wrap to the next line */
+  justify-content: center; /* Center tools */
+  gap: 2rem; /* Space between tools */
+}
+
+/* Individual Coding Tool */
+.coding-tool {
+  background-color: #f9f9f9; /* Light background for tools */
+  border: 1px solid #ddd; /* Border for separation */
+  border-radius: 8px;
+  padding: 2rem; /* Increased padding for tools */
+  width: 220px; /* Reduced width for each tool */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s, background-color 0.3s; /* Animation for scale effect */
+  text-align: center; /* Center text */
+}
+
+.coding-tool:hover {
+  transform: translateY(-5px) scale(1.03); /* Lift and scale effect on hover */
+}
+
+/* Tool Image */
+.coding-tool-image {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
+  margin-bottom: 1rem;
+}
+
+/* Tool Title and Description */
+.tool-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333; /* Darker text for titles */
+}
+
+.tool-description {
+  margin-bottom: 1rem;
+  color: #555; /* Gray color for descriptions */
+}
+
+/* Button Styles */
+.tool-button {
+  font-size: 0.9rem; /* Slightly smaller font size */
+  padding: 0.7rem 1.2rem; /* Increased padding */
+  background-color: #4B3D2E;
+  color: white;
+  border-radius: 8px;
+  transition: transform 0.3s, background-color 0.3s; /* Animation for scaling and color change */
+}
+
+.tool-button:hover {
+  transform: scale(1.05) rotate(2deg); /* Scale and slightly rotate on hover */
+  background-color: #3a2d2b; /* Darker shade on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Additional Animations */
+
+/* Bounce Animation for Heading */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Pulse Animation for Coding Tools */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Fade and Slide for Description */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rotate Animation for Tool Images */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+/* Updated Styles with Animations */
+.coding-tool {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem; /* Increased padding for tools */
+  width: 220px; /* Reduced width for each tool */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s; /* Include animation in transition */
+  text-align: center;
+  animation: pulse 1.5s infinite; /* Pulse effect for coding tools */
+}
+
+.coding-tool-image:hover {
+  animation: rotate 0.3s forwards; /* Rotate on hover */
+}
+
+/* Additional hover effects for coding tool */
+.coding-tool:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+  border-color: #bbb; /* Darker border on hover */
+  transform: translateY(-5px) scale(1.03); /* Lift and scale effect */
+}
+
+/* New hover effects */
+.coding-tool:hover .tool-title {
+  color: #4B3D2E; /* Change title color on hover */
+}
+
+.coding-tool:hover .tool-description {
+  color: #333; /* Darker description on hover */
+}
+
+.tool-button:hover {
+  transform: scale(1.05) rotate(2deg); /* Scale and slightly rotate on hover */
+  background-color: #3a2d2b; /* Darker shade on hover */
+}

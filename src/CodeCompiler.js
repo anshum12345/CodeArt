@@ -23,9 +23,8 @@ import {
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { saveAs } from "file-saver";
-import Header from './Header'; // Import the Header component
+import Header from './Header';
 
-// Ace Editor configuration
 ace.config.set("basePath", "https://cdn.jsdelivr.net/npm/ace-builds@1.4.3/src-noconflict/");
 ace.config.setModuleUrl("ace/mode/javascript_worker", "https://cdn.jsdelivr.net/npm/ace-builds@1.4.3/src-noconflict/worker-javascript.js");
 
@@ -90,7 +89,7 @@ function CodeCompiler() {
 
   return (
     <>
-      <Header /> {/* Add the Header component here */}
+      <Header />
       <Modal
         open={showModal}
         onClose={handleCloseModal}
@@ -103,12 +102,12 @@ function CodeCompiler() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            bgcolor: "#19202b", // Set to a blue shade
+            bgcolor: "#19202b",
             border: "2px solid #000",
             boxShadow: 24,
             p: 4,
             maxWidth: "80%",
-            minWidth: "50%",
+            minWidth: "300px",
           }}
         >
           <h2
@@ -136,51 +135,40 @@ function CodeCompiler() {
         </Box>
       </Modal>
       <Box
-        backgroundColor="#19202b" 
+        backgroundColor="#19202b"
         sx={{
-          display: "grid",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           height: "92vh",
-          gridTemplateColumns: "repeat(12, 1fr)",
-          gridGap: "0 20px",
-          "& .ace_gutter": {
-            backgroundColor: "#19202b", // Match the editor gutter to the background
-          },
-          "& .ace_editor": {
-            backgroundColor: "#19202b", // Match the editor background to the main background
-          },
-          "& .ace_support.ace_function": {
-            color: "primary.main",
-          },
-          "& #CodeBox": {
-            borderRight: "2px solid",
-            borderColor: "primary.main",
-          },
+          gap: "20px",
+          padding: "10px",
         }}
       >
-        <AceEditor
-          mode={editorLang}
-          theme="dracula"
-          name="CodeBox"
-          onChange={setCode}
-          value={code}
-          fontSize={17}
-          showPrintMargin={false}
-          style={{
-            gridColumn: "span 9",
-            height: "100%",
-            width: "100%",
-          }}
-          showGutter={true}
-          highlightActiveLine={true}
-          setOptions={{
-            enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true,
-            enableSnippets: true,
-            showLineNumbers: true,
-          }}
-        />
-        <div style={{ gridColumn: "span 3", padding: "0px 0px" }}>
-          <div style={{ textAlign: "right", width: "inherit" }}>
+        <Box sx={{ flex: 1 }}>
+          <AceEditor
+            mode={editorLang}
+            theme="dracula"
+            name="CodeBox"
+            onChange={setCode}
+            value={code}
+            fontSize={17}
+            showPrintMargin={false}
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+            showGutter={true}
+            highlightActiveLine={true}
+            setOptions={{
+              enableBasicAutocompletion: true,
+              enableLiveAutocompletion: true,
+              enableSnippets: true,
+              showLineNumbers: true,
+            }}
+          />
+        </Box>
+        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Select
               value={lang}
               onChange={(e) => setLang(e.target.value)}
@@ -193,8 +181,7 @@ function CodeCompiler() {
                 color: "primary.main",
                 height: "33px",
                 backgroundColor: "dark.main",
-                marginLeft: 15,
-                marginRight: 1,
+                margin: "0 10px",
               }}
             >
               <MenuItem value={"python3"}>Python</MenuItem>
@@ -211,8 +198,7 @@ function CodeCompiler() {
               onClick={createRequest}
               sx={{
                 marginTop: "6px",
-                marginBottom: "9px",
-                marginRight: "2px",
+                marginRight: "10px",
                 color: "text.secondary",
               }}
               startIcon={<PlayArrowRoundedIcon sx={{ color: "text.secondary" }} />}
@@ -242,66 +228,61 @@ function CodeCompiler() {
             {executing && (
               <LinearProgress size={14} style={{ color: "white", margin: "auto" }} />
             )}
-          </div>
-          <div style={{ width: "99%" }}>
-            <InputLabel
-              sx={{
-                color: "primary.main",
-                margin: "7px 0",
-                textAlign: "left !important",
-                fontFamily: "poppins",
-              }}
-            >
-              Input
-            </InputLabel>
-            <TextField
-              multiline
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              inputProps={{
-                style: {
-                  fontSize: 20,
-                  height: "10rem",
-                  color: "#fff",
-                },
-              }}
-              variant="outlined"
-              sx={{
-                backgroundColor: "text.primary",
-                width: "inherit",
-              }}
-            />
-          </div>
-          <div style={{ width: "99%", height: "60%" }}>
-            <InputLabel
-              sx={{
-                color: "primary.main",
-                margin: "7px 0",
-                textAlign: "left !important",
-                fontFamily: "poppins",
-              }}
-            >
-              Output
-            </InputLabel>
-            <Box
-              sx={{
-                textAlign: "left",
-                color: "white",
-                overflow: "auto",
-                whiteSpace: "pre-line",
-                fontFamily: "monospace",
-                height: "90%",
-                width: "inherit",
-                fontSize: "17px",
-                backgroundColor: "text.primary",
-                border: "1px solid rgba(255, 255, 255, 0.23)",
-                borderRadius: "4px",
-              }}
-            >
-              {output?.data?.output || output?.data?.error || output}
-            </Box>
-          </div>
-        </div>
+          </Box>
+          <InputLabel
+            sx={{
+              color: "primary.main",
+              margin: "7px 0",
+              textAlign: "left",
+              fontFamily: "poppins",
+            }}
+          >
+            Input
+          </InputLabel>
+          <TextField
+            multiline
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            inputProps={{
+              style: {
+                fontSize: 20,
+                height: "10rem",
+                color: "#fff",
+              },
+            }}
+            variant="outlined"
+            sx={{
+              backgroundColor: "text.primary",
+              width: "100%",
+            }}
+          />
+          <InputLabel
+            sx={{
+              color: "primary.main",
+              margin: "7px 0",
+              textAlign: "left",
+              fontFamily: "poppins",
+            }}
+          >
+            Output
+          </InputLabel>
+          <Box
+            sx={{
+              textAlign: "left",
+              color: "white",
+              overflow: "auto",
+              whiteSpace: "pre-line",
+              fontFamily: "monospace",
+              flex: 1,
+              backgroundColor: "text.primary",
+              border: "1px solid rgba(255, 255, 255, 0.23)",
+              borderRadius: "4px",
+              padding: "10px",
+            }}
+          >
+            {output?.data?.output || output?.data?.error || output}
+          </Box>
+        </Box>
       </Box>
     </>
   );
