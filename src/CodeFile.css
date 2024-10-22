@@ -165,18 +165,3 @@
   }
 }
 
-@media (max-width: 300px) {
-  .codefile-heading {
-      font-size: 1rem; /* Further reduce size */
-      text-align: center; /* Center text for small screens */
-  }
-  .codefile-description {
-      font-size: 0.75rem; /* Smaller size for small devices */
-      padding: 0 5px; /* Keep small padding */
-  }
-
-  .tool-button {
-      padding: 8px; /* Adjust padding for compactness */
-      font-size: 0.8rem; /* Smaller button text */
-  }
-}
