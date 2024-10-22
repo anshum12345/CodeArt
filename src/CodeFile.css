@@ -1,188 +1,182 @@
-/* src/CodeFile.css */
+/* Keyframes for tilt animation */
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .codefile-container {
-  padding: 2rem;
-  text-align: center;
-  height: 100vh; /* Full height for centering */
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Center content vertically */
-  animation: fadeIn 1s ease-in-out; /* Fade-in animation for the container */
+  min-height: 100vh; /* Ensure full height for content */
+}
+
+.content-container {
+  flex: 1; /* Allow content to grow and fill space */
 }
 
 .codefile-heading {
-  color: #4B3D2E;
-  margin-bottom: 1rem;
-  animation: bounce 0.8s forwards; /* Bounce animation for the heading */
+  text-align: center;
+  margin: 16px 0;
+  transition: transform 0.3s ease, color 0.3s ease; /* Animation for heading */
+  /* animation: tilt 2s infinite; Apply tilt animation */
+}
+
+.codefile-heading:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  color: #007BFF; /* Change color on hover */
 }
 
 .codefile-description {
-  margin-bottom: 2rem;
-  animation: fadeSlideIn 1s ease-in-out; /* Fade and slide for the description */
-  padding: 1rem; /* Increased padding for the description */
+  text-align: center;
+  margin-bottom: 32px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Animation for description */
+  /* animation: tilt 2s infinite; Apply tilt animation */
 }
 
-/* Coding Tools Container */
+.codefile-description:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  color: #007BFF; /* Change color on hover */
+}
+
 .coding-tools-container {
   display: flex;
-  flex-wrap: wrap; /* Allow tools to wrap to the next line */
-  justify-content: center; /* Center tools */
-  gap: 2rem; /* Space between tools */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Individual Coding Tool */
 .coding-tool {
-  background-color: #f9f9f9; /* Light background for tools */
-  border: 1px solid #ddd; /* Border for separation */
-  border-radius: 8px;
-  padding: 2rem; /* Increased padding for tools */
-  width: 220px; /* Reduced width for each tool */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s, background-color 0.3s; /* Animation for scale effect */
-  text-align: center; /* Center text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.3s ease; /* Animation for the tool container */
+  flex: 1 1 250px; /* Flex property for responsive layout */
+  max-width: 300px; /* Limit maximum width */
+  margin: 16px; /* Add some spacing between tools */
 }
 
 .coding-tool:hover {
-  transform: translateY(-5px) scale(1.03); /* Lift and scale effect on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-/* Tool Image */
 .coding-tool-image {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners for images */
-  margin-bottom: 1rem;
-}
-
-/* Tool Title and Description */
-.tool-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #333; /* Darker text for titles */
-}
-
-.tool-description {
-  margin-bottom: 1rem;
-  color: #555; /* Gray color for descriptions */
-}
-
-/* Button Styles */
-.tool-button {
-  font-size: 0.9rem; /* Slightly smaller font size */
-  padding: 0.7rem 1.2rem; /* Increased padding */
-  background-color: #4B3D2E;
-  color: white;
-  border-radius: 8px;
-  transition: transform 0.3s, background-color 0.3s; /* Animation for scaling and color change */
-}
-
-.tool-button:hover {
-  transform: scale(1.05) rotate(2deg); /* Scale and slightly rotate on hover */
-  background-color: #3a2d2b; /* Darker shade on hover */
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Additional Animations */
-
-/* Bounce Animation for Heading */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Pulse Animation for Coding Tools */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Fade and Slide for Description */
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Rotate Animation for Tool Images */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(5deg);
-  }
-}
-
-/* Updated Styles with Animations */
-.coding-tool {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 2rem; /* Increased padding for tools */
-  width: 220px; /* Reduced width for each tool */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, background-color 0.3s; /* Include animation in transition */
-  text-align: center;
-  animation: pulse 1.5s infinite; /* Pulse effect for coding tools */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease; /* Animation for image */
 }
 
 .coding-tool-image:hover {
-  animation: rotate 0.3s forwards; /* Rotate on hover */
+  transform: scale(1.1); /* Slightly enlarge image on hover */
 }
 
-/* Additional hover effects for coding tool */
-.coding-tool:hover {
-  background-color: #f0f0f0; /* Change background color on hover */
-  border-color: #bbb; /* Darker border on hover */
-  transform: translateY(-5px) scale(1.03); /* Lift and scale effect */
-}
-
-/* New hover effects */
-.coding-tool:hover .tool-title {
-  color: #4B3D2E; /* Change title color on hover */
-}
-
-.coding-tool:hover .tool-description {
-  color: #333; /* Darker description on hover */
+.tool-button {
+  margin-top: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animation for button */
+  padding: 10px 20px; /* Add padding for button */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #007BFF; /* Default button color */
+  color: white; /* Button text color */
+  cursor: pointer; /* Change cursor to pointer */
+  animation: tilt 2s infinite; /* Apply tilt animation */
 }
 
 .tool-button:hover {
-  transform: scale(1.05) rotate(2deg); /* Scale and slightly rotate on hover */
-  background-color: #3a2d2b; /* Darker shade on hover */
+  background-color: #0056b3; /* Darken background color on hover */
+  transform: translateY(-2px); /* Slightly raise button on hover */
+}
+
+/* Media Queries for additional responsiveness */
+@media (max-width: 1200px) {
+  .codefile-heading {
+      font-size: 2rem;
+  }
+  .codefile-description {
+      font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .codefile-heading {
+      font-size: 1.75rem;
+  }
+  .codefile-description {
+      font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .codefile-heading {
+      font-size: 1.5rem; /* Adjust size for smaller screens */
+      padding: 0 10px; /* Add some horizontal padding */
+      margin: 10px 0; /* Decrease margin for better fit */
+  }
+  .codefile-description {
+      font-size: 1rem; /* Adjust size for smaller screens */
+      padding: 0 10px; /* Add some horizontal padding */
+      margin-bottom: 16px; /* Reduce bottom margin */
+  }
+
+  .coding-tool {
+      flex: 1 1 100%; /* Stack tools on smaller screens */
+      max-width: none; /* Remove max-width constraint */
+      margin: 8px 0; /* Adjust margin for stacking */
+  }
+}
+
+@media (max-width: 600px) {
+  .codefile-heading {
+      font-size: 1.3rem; /* Further adjust size */
+      padding: 0 5px; /* Decrease padding */
+  }
+  .codefile-description {
+      font-size: 0.9rem; /* Further adjust size */
+      padding: 0 5px; /* Decrease padding */
+  }
+
+  .tool-button {
+      width: 100%; /* Full width button on small screens */
+      padding: 12px; /* Increase padding for better touch targets */
+  }
+}
+
+@media (max-width: 400px) {
+  .codefile-heading {
+      font-size: 1.2rem; /* Smaller size for very small screens */
+      padding: 0 5px; /* Maintain small padding */
+  }
+  .codefile-description {
+      font-size: 0.85rem; /* Adjust size for better fit */
+      padding: 0 5px; /* Maintain small padding */
+  }
+
+  .tool-button {
+      padding: 10px; /* Adjust padding for touch targets */
+  }
+}
+
+@media (max-width: 300px) {
+  .codefile-heading {
+      font-size: 1rem; /* Further reduce size */
+      text-align: center; /* Center text for small screens */
+  }
+  .codefile-description {
+      font-size: 0.75rem; /* Smaller size for small devices */
+      padding: 0 5px; /* Keep small padding */
+  }
+
+  .tool-button {
+      padding: 8px; /* Adjust padding for compactness */
+      font-size: 0.8rem; /* Smaller button text */
+  }
 }
